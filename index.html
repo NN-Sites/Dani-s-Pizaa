@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הפיצה של דני - יבנה</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+:root {
+    --main-red: #d32f2f;
+    --dark-red: #b71c1c;
+    --pizza-yellow: #ffc107;
+    --text-dark: #2c3e50;
+    --bg-light: #fefefe;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Assistant', sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--bg-light); scroll-behavior: smooth; }
+
+header { background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; max-width: 1200px; margin: 0 auto; }
+.logo { font-size: 28px; font-weight: 800; color: var(--main-red); text-decoration: none; }
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover; background-position: center; height: 55vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px;
+}
+.hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
+
+/* כפתור מוקטן */
+.btn-call { 
+    background-color: var(--main-red); 
+    color: white !important; 
+    padding: 12px 30px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3); 
+    transition: var(--transition); 
+}
+.btn-call:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4); }
+
+.features { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; text-align: center; }
+.feature-item i { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+.icon-gold { color: #f1c40f; } .icon-red { color: #e74c3c; } .icon-green { color: #27ae60; }
+
+.info-section { padding: 40px 5%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.info-card { background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); }
+.hours-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #eee; }
+
+.menu-section { background: #f9f9f9; padding: 60px 5%; text-align: center; }
+.menu-section h1 { font-size: 2.8rem; color: var(--text-dark); margin-bottom: 10px; font-weight: 800; }
+.menu-container { max-width: 1000px; margin: 0 auto; text-align: initial; }
+
+/* כותרת H2 מוגדלת */
+.category-title { 
+    font-size: 2.5rem; 
+    color: var(--main-red); 
+    border-bottom: 4px solid var(--pizza-yellow); 
+    margin: 50px 0 25px; 
+    padding-bottom: 8px; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    font-weight: 800;
+}
+
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+.menu-item { background: white; border: 1px solid #eee; padding: 18px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+.menu-item:hover { transform: scale(1.02); box-shadow: var(--shadow); }
+.item-price { font-weight: 800; color: var(--main-red); font-size: 1.2rem; }
+
+.mobile-cta { position: fixed; bottom: 20px; left: 20px; right: 20px; background: #27ae60; color: white; text-align: center; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; display: none;}
+
+footer { background: #1a252f; color: white; text-align: center; padding: 40px 20px; }
+
+@media (max-width: 768px) {
+    .info-section { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.5rem; }
+    .category-title { font-size: 2rem; }
+    .mobile-cta { display: block; }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">🍕 הפיצה של דני</a>
+            <div style="font-weight: 800; color: var(--main-red);">08-666-9884</div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>הפיצה של דני</h1>
+        <p>הטעם האהוב של יבנה - עכשיו במשלוחים!</p>
+        <a href="tel:086669884" class="btn-call">הזמינו עכשיו</a>
+    </section>
+
+    <section class="features">
+        <div class="feature-item"><i class="fas fa-certificate icon-gold"></i><h3>כשר למהדרין</h3><p>רבנות יבנה</p></div>
+        <div class="feature-item"><i class="fas fa-truck icon-red"></i><h3>משלוחים</h3><p>מהיר וחם</p></div>
+        <div class="feature-item"><i class="fas fa-leaf icon-green"></i><h3>טריות</h3><p>חומרי גלם מעולים</p></div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-card">
+            <h3>⏰ שעות פעילות</h3>
+            <ul class="hours-list" style="list-style:none;">
+                <li><span>א' - ה'</span> <span>11:30 – 22:00</span></li>
+                <li><span>יום שישי</span> <span>סגור</span></li>
+                <li><span>מוצ"ש</span> <span>18:00 – 23:00</span></li>
+            </ul>
+        </div>
+        <div class="info-card">
+            <h3>📍 כתובת</h3>
+            <p>שדרות דואני 42, יבנה</p>
+            <p>(מרכז קוסמוס לשעבר)</p>
+            <p style="margin-top:10px; font-weight:bold; color:var(--main-red);">טלפון: 08-666-9884</p>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <h1>התפריט שלנו</h1>
+        <div class="menu-container">
+            <h2 class="category-title"><i class="fas fa-pizza-slice"></i> פיצות</h2>
+            <div class="menu-grid">
+                <div class="menu-item"><span>פיצה אישית צהובה</span><span class="item-price">₪18</span></div>
+                <div class="menu-item"><span>פיצה אישית מוצרלה</span><span class="item-price">₪22</span></div>
+                <div class="menu-item"><span>פיצה משפחתית צהובה</span><span class="item-price">₪30</span></div>
+                <div class="menu-item"><span>פיצה משפחתית מוצרלה</span><span class="item-price">₪35</span></div>
+                <div class="menu-item"><span>פיצה אלפרדו</span><span class="item-price">₪35</span></div>
+            </div>
+
+            <h2 class="category-title"><i class="fas fa-bread-slice"></i> מאפים וטוסטים</h2>
+            <div class="menu-grid">
+                <div class="menu-item"><span>טוסט (כולל 2 תוספות)</span><span class="item-price">₪25</span></div>
+                <div class="menu-item"><span>זיווה רגילה + רסק</span><span class="item-price">₪25</span></div>
+                <div class="menu-item"><span>מלאווח מגולגל</span><span class="item-price">₪25</span></div>
+                <div class="menu-item"><span>לחם שום משפחתי</span><span class="item-price">₪25</span></div>
+            </div>
+
+            <h2 class="category-title"><i class="fas fa-glass-whiskey"></i> שתייה וקינוחים</h2>
+            <div class="menu-grid">
+                <div class="menu-item"><span>פחית שתייה</span><span class="item-price">₪8</span></div>
+                <div class="menu-item)<span>שתייה 1.5 ליטר</span><span class="item-price">₪15</span></div>
+                <div class="menu-item"><span>קינוחי כוסות</span><span class="item-price">₪12</span></div>
+            </div>
+        </div>
+    </section>
+
+    <a href="tel:086669884" class="mobile-cta">📞 חייגו להזמנה: 08-666-9884</a>
+
+    <footer>
+        <p>© כל הזכויות שמורות - הפיצה של דני | 2026</p>
+    </footer>
+
+</body>
+</html>
