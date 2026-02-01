@@ -31,7 +31,6 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 }
 .hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
 
-/* כפתור מוקטן */
 .btn-call { 
     background-color: var(--main-red); 
     color: white !important; 
@@ -57,7 +56,6 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .menu-section h1 { font-size: 2.8rem; color: var(--text-dark); margin-bottom: 10px; font-weight: 800; }
 .menu-container { max-width: 1000px; margin: 0 auto; text-align: initial; }
 
-/* כותרת H2 מוגדלת */
 .category-title { 
     font-size: 2.5rem; 
     color: var(--main-red); 
@@ -77,13 +75,18 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 
 .mobile-cta { position: fixed; bottom: 20px; left: 20px; right: 20px; background: #27ae60; color: white; text-align: center; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; display: none;}
 
-footer { background: #1a252f; color: white; text-align: center; padding: 40px 20px; }
+/* Footer Styling */
+footer { background: #1a252f; color: #ecf0f1; text-align: center; padding: 30px 20px; font-size: 0.95rem; }
+footer a { color: var(--pizza-yellow); text-decoration: none; font-weight: bold; transition: var(--transition); }
+footer a:hover { text-decoration: underline; color: #fff; }
+.copy-text { margin-bottom: 10px; opacity: 0.8; }
 
 @media (max-width: 768px) {
     .info-section { grid-template-columns: 1fr; }
     .hero h1 { font-size: 2.5rem; }
     .category-title { font-size: 2rem; }
     .mobile-cta { display: block; }
+    footer { padding-bottom: 90px; } /* מרווח בשביל הכפתור הצף בנייד */
 }
     </style>
 </head>
@@ -98,7 +101,7 @@ footer { background: #1a252f; color: white; text-align: center; padding: 40px 20
 
     <section class="hero">
         <h1>הפיצה של דני</h1>
-        <p>הטעם האהוב של יבנה - עכשיו במשלוחים!</p>
+        <h2>הטעם האהוב של יבנה - עכשיו במשלוחים!</h2>
         <a href="tel:086669884" class="btn-call">הזמינו עכשיו</a>
     </section>
 
@@ -148,7 +151,7 @@ footer { background: #1a252f; color: white; text-align: center; padding: 40px 20
             <h2 class="category-title"><i class="fas fa-glass-whiskey"></i> שתייה וקינוחים</h2>
             <div class="menu-grid">
                 <div class="menu-item"><span>פחית שתייה</span><span class="item-price">₪8</span></div>
-                <div class="menu-item)<span>שתייה 1.5 ליטר</span><span class="item-price">₪15</span></div>
+                <div class="menu-item"><span>שתייה 1.5 ליטר</span><span class="item-price">₪15</span></div>
                 <div class="menu-item"><span>קינוחי כוסות</span><span class="item-price">₪12</span></div>
             </div>
         </div>
@@ -157,7 +160,8 @@ footer { background: #1a252f; color: white; text-align: center; padding: 40px 20
     <a href="tel:086669884" class="mobile-cta">📞 חייגו להזמנה: 08-666-9884</a>
 
     <footer>
-        <p>© כל הזכויות שמורות - הפיצה של דני | 2026</p>
+        <div class="copy-text">© 2026 כל הזכויות שמורות - הפיצה של דני</div>
+        <div>האתר נבנה ע"י <a href="http://did.li/NNsites" target="_blank">NNsites</a></div>
     </footer>
 
 </body>
